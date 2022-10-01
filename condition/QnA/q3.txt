@@ -1,0 +1,15 @@
+usergen ganna ona inputs
+- number
+
+- number eka 0th 100th athara nemeinm message ekak pennan ona "number should between 0-100" kiyla
+- number eka 10ta wada adunm - > "lower than 10"
+- number eka 25ta wada adunm - > "lower than 25"
+- number eka 50nm -> "equal to 50"
+- number eka 60th 100th atharanm, pallaha conditions check karanna
+    - number eka oththenm -> "odd number" kiyla msg ekak pennana
+    - number eka irattenm -> "even number" kiyala msg ekak pennana
+
+
+
+
+

@@ -1,0 +1,7 @@
+usergen ganna ona inputs
+- quantity
+- item_price
+
+- quantity ekai item_price ekai wadi karala total price eka ganna
+- total price eka 100ta wada wadinm -> "above 100" kiyala pennana
+- total price eka 100ta wada adunm -> "below 100" kiyla pennana

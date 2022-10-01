@@ -1,0 +1,5 @@
+usergen ganna ona inputs
+- age
+
+userge age eka 18ta wada wadinm -> "site allowed" kiyna msg eka print karanna
+nathnm "site not allowed" kiyna msg eka print karanna
