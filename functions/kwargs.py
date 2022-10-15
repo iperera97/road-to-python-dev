@@ -3,8 +3,9 @@ def sayHello(fname, lname):
 
 
 # args
-sayHello("isuru", "mahesh")
+sayHello("isuru", "mahesh") # Hello isuru mahesh
+sayHello("mahesh", "isuru") # Hello mahesh isuru
 
 # keyword args
-sayHello(fname="isuru", lname="mahesh")
-sayHello(lname="mahesh", fname="isuru")
+sayHello(fname="isuru", lname="mahesh") # Hello isuru mahesh
+sayHello(lname="mahesh", fname="isuru") # Hello isuru mahesh
