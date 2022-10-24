@@ -1,5 +1,6 @@
 import csv
 import random
+from collections import Counter
 
 
 def store_data_in_csv(file_name, headers, data):
@@ -82,6 +83,13 @@ def calculate_avg_on_age(data):
     avg = sum(ages) / len(data)
     print(f"avg {avg}")
 
+def calculate_country_count(data):
+    countries = []
+
+    for each in data:
+        countries.append(each["country"])
+
+    return dict(Counter(countries))
 
 def calculate_data():
     data = read_data_in_csv("students.csv")
@@ -95,7 +103,10 @@ def calculate_data():
     # get students with maximum age
     filter_students_by_age(data, min_max["min"])
 
-    calculate_avg_on_age(data)
+    #calculate_avg_on_age(data)
+    country_count = calculate_country_count(data)
+    max_country = max(country_count, key=country_count.get)
+    print(max_country)
 
 
 generate_data()
