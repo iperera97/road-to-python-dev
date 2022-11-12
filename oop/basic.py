@@ -18,11 +18,12 @@ class Student:
 # create object
 s1 = Student()
 
+# access properties
 print(s1.name)
 print(s1.age)
 print(s1.gender)
 
+# access methods
 s1.speek()
-
 
     
