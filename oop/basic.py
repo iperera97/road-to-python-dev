@@ -24,6 +24,4 @@ print(s1.age)
 print(s1.gender)
 
 # access methods
-s1.speek()
-
-    
+s1.speek()    
