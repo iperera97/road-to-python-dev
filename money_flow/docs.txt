@@ -1,0 +1,23 @@
+we are trying to build a cli app to manage money income and outcome
+
+Requirments,
+- record income / outcome
+- update income / outcome
+- read income / outcome
+- total income / outcome / saving by days, week, monthly
+
+table structure for money manager
+- id integer auto increment primary key
+- date date
+- description varchar
+- status (income / outcome) varchar
+- amount (decimal)
+
+
+CREATE TABLE transactions (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    description varchar(255),
+    status varchar(255),
+    date date,
+    amount decimal(8, 2)
+);

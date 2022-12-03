@@ -1,0 +1,26 @@
+connect to mariadb => mariadb -u root -p
+
+create database => create database <db_name>;
+
+select database => use <db_name>;
+
+create table => create table <table_name> (
+    id integer,
+    name varchar(32),
+    email varchar(32),
+    gender boolean
+)
+
+view table structure => describe <table_name>
+
+insert data into table =>
+insert into <table_name> (id, name, email, gender)
+values (1, "isuru", "isurumahesh0992@gmail.com", true);
+
+view data => select * from <table_name>
+
+update all => update <table_name> set name = 'isuru'
+update specific => update <table_name> set name = 'isuru' where id = 2
+
+delete all => delete from <table_name>
+delete specific => delete from <table_name> where id = 2
