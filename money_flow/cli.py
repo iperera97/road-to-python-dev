@@ -1,4 +1,4 @@
-from prettytable import PrettyTable
+from prettytable.colortable import ColorTable, Theme
 from money import MoneyManager
 
 money_manager = MoneyManager()
@@ -8,12 +8,22 @@ class CliManager:
     valid_inputs = {
         "ami": "add money income",
         "amo": "add money outcome",
-        "vm": "view money"
+        "vm": "view money",
+        "dm": "delete money",
+        "q": "quit from application"
     }
 
+    table_color_theme = Theme(
+        default_color="96",
+        vertical_color="20",
+        horizontal_color="56",
+        junction_color="36",
+    )
+
     def show_input_table(self):
-        input_table = PrettyTable()
+        input_table = ColorTable(theme=self.table_color_theme)
         input_table.field_names = ["action", "value"]
+        input_table.border = True
 
         for key, value in self.valid_inputs.items():
             input_table.add_row([key, value])
@@ -48,7 +58,7 @@ class CliManager:
 
     def view_money(self):
         result = money_manager.read()
-        table = PrettyTable()
+        table = ColorTable(theme=self.table_color_theme)
         table.field_names = ["id", "date", "description", "income", "outcome", "saving"]
         total_income = 0
         total_outcome = 0
@@ -79,9 +89,16 @@ class CliManager:
         print(table)
 
     def delete_money(self):
-        pass
+        self.view_money()
+
+        transaction_id = input("please enter transaction id that you want to delete ?")
+        money_manager.delete(transaction_id)
+
+        self.view_money()
 
     def update_money(self):
         pass
 
+    def quit_application(self):
+        exit()
 
