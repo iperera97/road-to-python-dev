@@ -20,4 +20,6 @@ if __name__ == "__main__":
                 "q": cli_manager.quit_application,
             }
 
+            print("-" * 100)
             methods[user_input]()
+            print("-" * 100)

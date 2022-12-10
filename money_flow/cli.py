@@ -96,9 +96,9 @@ class CliManager:
 
         self.view_money()
 
-    def update_money(self):
-        pass
-
     def quit_application(self):
         exit()
+
+    def update_money(self):
+        pass
 
