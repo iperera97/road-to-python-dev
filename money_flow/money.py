@@ -1,15 +1,5 @@
-import mariadb
+from config import cursor, connection
 
-# create connection
-connection = mariadb.connect(
-    user="root",
-    password="123",
-    host="localhost",
-    port=3306,
-    database="MONEY"
-)
-
-cursor = connection.cursor(dictionary=True)
 
 class MoneyManager:
 
@@ -22,7 +12,10 @@ class MoneyManager:
         return True
     
     def read(self):
-        pass
+        cursor.execute(
+            "SELECT id, description, status, date, amount from transactions;"
+        )
+        return cursor.fetchall()
 
     def delete(self):
         pass
