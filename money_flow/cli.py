@@ -10,6 +10,7 @@ class CliManager:
         "amo": "add money outcome",
         "vm": "view money",
         "dm": "delete money",
+        "um": "update money",
         "q": "quit from application"
     }
 
@@ -96,9 +97,23 @@ class CliManager:
 
         self.view_money()
 
+    def update_money(self):
+        self.view_money()
+        money_id = input("please enter transaction id that you want to update ?")
+        print(
+            "please enter the fields that you want update ? "
+            "fields: amount, status, date, description."
+        )
+        update_col_input = input()
+        update_columns = update_col_input.split(",")
+        updated_values = {}
+
+        for each_input in update_columns:
+            updated_values[each_input] = input(f"{each_input}:")
+
+        money_manager.update(money_id, updated_values)
+        print("successfully updated")
+
     def quit_application(self):
         exit()
-
-    def update_money(self):
-        pass
 

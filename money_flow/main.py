@@ -17,6 +17,7 @@ if __name__ == "__main__":
                 "amo": cli_manager.add_money_outcome,
                 "vm": cli_manager.view_money,
                 "dm": cli_manager.delete_money,
+                "um": cli_manager.update_money,
                 "q": cli_manager.quit_application,
             }
 

@@ -27,5 +27,23 @@ class MoneyManager:
         connection.commit()
         return True
 
-    def update(self):
-        pass
+    def update(self, transaction_id, update_data):
+        query = f"UPDATE {self.table_name} SET "
+        counter = 1
+        item_count = len(update_data)
+
+        for key, _ in update_data.items():
+            if counter == item_count:
+                query += f"{key} = ?"
+            else:
+                query += f"{key} = ?,"
+
+            counter += 1
+        
+        query += f" where id = {transaction_id}"
+
+        cursor.execute(query, list(update_data.values()))
+        connection.commit()
+        return True
+
+
